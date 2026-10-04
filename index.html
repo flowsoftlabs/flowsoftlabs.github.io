@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlowSoftLabs - 일상과 업무를 더 간단하게 만드는 작고 실용적인 Android 앱을 개발합니다.">
+  <link rel="canonical" href="https://rlarudfo87.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FlowSoftLabs">
+  <meta property="og:title" content="FlowSoftLabs | Simple tools. Better Flow.">
+  <meta property="og:description" content="DISPURE, 제원플로 등 일상과 업무를 더 간단하게 만드는 Android 앱을 만나보세요.">
+  <meta property="og:url" content="https://rlarudfo87.github.io/">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FlowSoftLabs | Simple tools. Better Flow.">
+  <meta name="twitter:description" content="DISPURE, 제원플로 등 일상과 업무를 더 간단하게 만드는 Android 앱을 만나보세요.">
+
+  <title>FlowSoftLabs</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+      background: #f6f8fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid #e5e7eb;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 850;
+      color: #2563eb;
+      letter-spacing: -0.4px;
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-link {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .header-link:hover { color: #2563eb; }
+
+    main {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 76px 24px 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 54px 0 86px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #eaf1ff;
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span { color: #2563eb; }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 19px;
+      color: #6b7280;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      letter-spacing: -0.5px;
+    }
+
+    .section-subtitle {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .apps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .app-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .app-card {
+      scroll-margin-top: 96px;
+    }
+
+    .app-card:target {
+      border-color: #93b4ff;
+      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.14);
+    }
+
+    .app-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .app-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: #eff4ff;
+      color: #2563eb;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .app-card h3 {
+      font-size: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    .app-card p {
+      flex: 1;
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .app-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 13px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 750;
+      border: 1px solid #dbe3ef;
+      background: #ffffff;
+      color: #374151;
+    }
+
+    .btn:hover {
+      border-color: #9fb9f8;
+      color: #2563eb;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+      color: #ffffff;
+    }
+
+    .about {
+      margin-top: 78px;
+      padding: 36px;
+      background: #111827;
+      color: #ffffff;
+      border-radius: 22px;
+    }
+
+    .about h2 {
+      margin-bottom: 12px;
+      font-size: 26px;
+    }
+
+    .about p {
+      max-width: 760px;
+      color: #cbd5e1;
+    }
+
+    .about-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .about .btn {
+      border-color: #374151;
+      background: #1f2937;
+      color: #e5e7eb;
+    }
+
+    footer {
+      max-width: 1060px;
+      margin: 70px auto 0;
+      padding: 30px 24px 40px;
+      color: #9ca3af;
+      font-size: 13px;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #6b7280;
+      text-decoration: none;
+      margin-left: 14px;
+    }
+
+    footer a:hover { color: #2563eb; }
+
+    @media (max-width: 640px) {
+      .header-inner { padding: 16px 18px; }
+      .header-links { gap: 7px; }
+      .header-link { font-size: 13px; }
+      main { padding: 44px 18px 0; }
+      .hero { padding: 34px 0 60px; }
+      .hero h1 { letter-spacing: -1.2px; }
+      .hero p { font-size: 16px; }
+      .section-head { align-items: start; flex-direction: column; gap: 4px; }
+      .apps { grid-template-columns: 1fr; }
+      .about { margin-top: 54px; padding: 28px 22px; }
+      footer { margin-top: 50px; padding: 26px 18px 36px; }
+      footer a { margin-left: 0; margin-right: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">FlowSoftLabs</div>
+      <div class="header-links">
+        <a class="header-link" href="#apps">Apps</a>
+        <a class="header-link" href="#about">About</a>
+        <a class="header-link" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/">Privacy</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-badge">Independent App Studio</div>
+      <h1>Simple tools.<br>Better <span>Flow.</span></h1>
+      <p>일상과 업무를 더 간단하게 만드는 작고 실용적인 소프트웨어를 개발합니다.</p>
+    </section>
+
+    <section id="apps">
+      <div class="section-head">
+        <h2 class="section-title">Our Apps</h2>
+        <div class="section-subtitle">FlowSoftLabs의 앱을 한곳에서 확인하세요.</div>
+      </div>
+
+      <div class="apps">
+        <article class="app-card">
+          <div class="app-top">
+            <div class="app-icon">견</div>
+            <h3>견적플로</h3>
+          </div>
+          <p>견적서 작성과 고객·상품 관리를 위한 간결한 업무 도구입니다.</p>
+          <div class="app-actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.flowsoftlabs.estimateflow" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+          </div>
+        </article>
+
+        <article class="app-card">
+          <div class="app-top">
+            <div class="app-icon">장</div>
+            <h3>장부플로</h3>
+          </div>
+          <p>수입과 지출, 고정 내역과 월간·연간 흐름을 관리하는 로컬 장부 앱입니다.</p>
+          <div class="app-actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.flowsoftlabs.ledgerflow" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+          </div>
+        </article>
+
+        <article class="app-card" id="specflow">
+          <div class="app-top">
+            <div class="app-icon">제</div>
+            <h3>제원플로</h3>
+          </div>
+          <p>현장에서 실장비와 구성품의 사진·제원을 바로 기록하고, 정리한 자료를 PDF와 Excel로 출력하는 업무 도구입니다.</p>
+          <div class="app-actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.flowsoftlabs.specflow" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+          </div>
+        </article>
+
+        <article class="app-card" id="dispure">
+          <div class="app-top">
+            <div class="app-icon">D</div>
+            <h3>DISPURE</h3>
+          </div>
+          <p>피규어, 아크릴 스탠드, 포토카드 등 내가 모은 굿즈를 작품·캐릭터별로 기록하고 한눈에 감상할 수 있는 컬렉션 앱입니다.</p>
+          <div class="app-actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.flowsoftlabs.dispure" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/dispure.html" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/dispure-delete-account.html" target="_blank" rel="noopener noreferrer">계정 삭제</a>
+          </div>
+        </article>
+
+        <article class="app-card">
+          <div class="app-top">
+            <div class="app-icon">트</div>
+            <h3>트립플로</h3>
+          </div>
+          <p>동행자와 여행 일정, 장소와 공동 경비를 함께 정리하는 협업 여행 플래너입니다.</p>
+          <div class="app-actions">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.flowsoftlabs.tripflow" target="_blank" rel="noopener noreferrer">Google Play</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/tripflow.html" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+            <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/tripflow-delete-account.html" target="_blank" rel="noopener noreferrer">계정 삭제</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2>FlowSoftLabs</h2>
+      <p>
+        FlowSoftLabs는 복잡한 기능을 많이 넣기보다 실제로 자주 사용하는 기능에 집중합니다.
+        업무 도구부터 생활 앱까지, 사용 흐름을 방해하지 않는 작은 소프트웨어를 꾸준히 만듭니다.
+      </p>
+      <div class="about-links">
+        <a class="btn" href="https://rlarudfo87.github.io/flowsoftlabs-privacy/" target="_blank" rel="noopener noreferrer">개인정보처리방침</a>
+        <a class="btn" href="https://github.com/rlarudfo87" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 FlowSoftLabs</div>
+    <div>
+      <a href="https://rlarudfo87.github.io/flowsoftlabs-privacy/">Privacy</a>
+      <a href="https://rlarudfo87.github.io/app-ads.txt">app-ads.txt</a>
+    </div>
+  </footer>
+</body>
+</html>
