@@ -1,0 +1,16 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.flowsoftlabs.tripflow",
+      "sha256_cert_fingerprints": [
+        "41:E6:4F:B5:CA:84:A2:29:95:A9:D0:3E:B8:ED:36:09:79:B0:FE:A5:1D:B3:7E:23:EF:95:49:F2:56:37:CC:EC",
+        "34:27:46:12:CC:E2:F4:02:0E:89:BF:A5:AE:5D:48:6B:D4:79:59:A3:C4:25:60:49:56:50:5C:8F:3A:62:66:23",
+        "8C:2F:B7:49:55:16:68:AD:CB:0E:CA:EE:03:C2:DD:D9:3F:5C:D4:BD:1B:FD:3D:6B:28:35:2D:D3:CD:D1:54:3F"
+      ]
+    }
+  }
+]
